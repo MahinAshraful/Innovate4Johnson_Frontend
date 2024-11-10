@@ -1,10 +1,24 @@
-function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import Home from './pages/Home';
+import Login from './pages/Login';
 
+const App = () => {
   return (
-    <>
-    <p className="bg-red-400">hi</p>
-    </>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route 
+          path="/home" 
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          } 
+        />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
