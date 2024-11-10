@@ -83,7 +83,7 @@ const Home = () => {
       <nav className="bg-white border-b">
         <div className="px-4 mx-auto max-w-7xl">
           <div className="flex items-center justify-between h-16">
-            <div className="text-2xl font-bold text-red-500">Innovate4Johnson</div>
+            <div className="text-2xl font-bold text-red-500">HackHire</div>
             <div className="flex space-x-8">
               <a href="#" className="text-gray-900">HOME</a>
               <a href="#" className="text-gray-900">CANDIDATES</a>

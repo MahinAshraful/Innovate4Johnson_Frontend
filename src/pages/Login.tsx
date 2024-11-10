@@ -54,7 +54,7 @@ const Login = () => {
     <div className="min-h-screen bg-white">
       {/* Nav Bar */}
       <nav className="flex items-center justify-between px-6 py-4">
-        <div className="text-red-600 text-xl font-bold">Innovate4Johnson</div>
+        <div className="text-red-600 text-xl font-bold">HackHire</div>
         <div className="space x-6"></div>
         <a href="/" className="text-black">HOME</a>
         <a href="/candidate" className="text-black">CANDIDATES</a>
@@ -66,7 +66,7 @@ const Login = () => {
     <div className="flex items-center justify-center px-4 rounded-lg">
       <div className="w-full h-fit bg-red-600 rounded-lg p-8 text-white rounded-xl">
         <h1 className="text-4xl font-bold text-center mb-8">
-          WELCOME TO INNOVATE4JOHNSON
+          WELCOME TO HackHire
         </h1>
 
         <div className="space-y-6">
