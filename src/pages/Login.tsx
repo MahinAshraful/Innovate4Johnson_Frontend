@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+// import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -51,50 +51,70 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-gray-100">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle className="text-center">Login</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
+    <div className="min-h-screen bg-white">
+      {/* Nav Bar */}
+      <nav className="flex items-center justify-between px-6 py-4">
+        <div className="text-red-600 text-xl font-bold">Innovate4Johnson</div>
+        <div className="space x-6"></div>
+        <a href="/" className="text-black">HOME</a>
+        <a href="/candidate" className="text-black">CANDIDATES</a>
+        <a href="/innovation-challenge" className="text-black">INNOVATION CHALLENGE</a>
+        <a href="/" className="text-black">LOGIN</a>
+      </nav>
+
+    {/* login component */}
+    <div className="flex items-center justify-center px-4 rounded-lg">
+      <div className="w-full h-fit bg-red-600 rounded-lg p-8 text-white rounded-xl">
+        <h1 className="text-4xl font-bold text-center mb-8">
+          WELCOME TO INNOVATE4JOHNSON
+        </h1>
+
+        <div className="space-y-6">
+
+          <form onSubmit={handleSubmit} className="space-y-4 flex flex-col items-center">
+            <div className="space-y-2 text-black w-2/3">
+              <label className="block font-bold">Email</label>
               <Input
-                type="email"
-                name="email"
-                placeholder="Email"
+                type='email'
+                name='email'
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full"
+                className="w-full h-10 bg-white text-black outline outline-1 rounded pl-2"
                 required
-              />
+                >
+              </Input>
             </div>
-            <div>
+
+            <div className="space-y-2 text-black w-2/3">
+              <label className="block font-bold">Password</label>
               <Input
-                type="password"
-                name="password"
-                placeholder="Password"
+                type='password'
+                name='password'
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full"
+                className="w-full h-10 bg-white text-black outline outline-1 rounded pl-2"
                 required
-              />
+                >
+              </Input>
             </div>
+
             {error && (
               <Alert variant="destructive">
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
-            <Button 
-              type="submit" 
-              className="w-full"
-              disabled={loading}
+
+            <Button
+            type="submit"
+            className="w-500 bg-white text-red-600 hover:bg-gray-100 rounded"
+            disabled={loading}
             >
-              {loading ? 'Logging in...' : 'Login'}
+              {loading ? 'Logging in...': 'Login'}
             </Button>
-          </form>
-        </CardContent>
-      </Card>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
